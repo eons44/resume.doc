@@ -169,7 +169,7 @@
 			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\textcolor{mainblue}{\Large\faIcon{globe}}} & \href{\cvsite}{\cvsite}}
 			% \ifthenelse{\equal{\cvdate}{}}{}{\textsc{\textcolor{mainblue}{\Large\faIcon[solid]{calendar-day}}} & \cvdate}
 		\end{tabular}
-		\vspace{0.05cm}
+		\vspace{0.3cm}
 
 		%------------------------------------------------
 		
@@ -179,7 +179,7 @@
 				\aboutme
 			\end{flushleft}
 		}
-		\vspace{0.15cm}
+		\vspace{0.3cm}
 
 		%------------------------------------------------
 
@@ -223,7 +223,8 @@
 	\stepcounter{colorCounter}%
 }
 
-\renewcommand{\section}[1]{
+\renewcommand{\section}[1]{%
+	\vspace{0.25cm}
 	{%
 		\color{gray}%
 		\Large\sectioncolor{#1}%
@@ -245,18 +246,12 @@
 
 % New environment for the long list
 \newenvironment{twenty}{%
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{%
-	\end{tabular*}
 }
 
 \newcommand{\twentyitem}[4]{%
-	#1&\parbox[t]{0.83\textwidth}{%
-		\textbf{#2}%
-		\hfill%
-		{\footnotesize#3}\\%
-		\parindent=0pt#4\vspace{\parsep}%
-	}\\
+	{\emergencystretch=3em\noindent{\large\textbf{#2}}\enspace{#3}\hfill{{\textcolor{gray}{#1}}}\par}\vspace{0.02cm}
+	{\emergencystretch=3em\parindent=0pt\parskip=0pt#4\par}\vspace{0.3cm}
 }
 
 %----------------------------------------------------------------------------------------
