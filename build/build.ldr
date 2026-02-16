@@ -1,0 +1,39 @@
+#!/usr/local/bin/elder
+// Build resume with EBBS using the latex builder.
+
+import("elder/build", "0.1.0")
+import("build/latex", "0.1.0")
+
+package:
+(
+	fetch(
+		name = "resume",
+		version = "0.0.0",
+		ebbs_event = ""
+	)
+)
+
+project_root := resolve_project_root_from_build_dir()
+build_root := project_root + "/build/tmp"
+
+// Build the LaTeX document
+latex(
+	name = package/name
+	version = package/version
+	project_root = project_root
+	build_root = build_root
+	clear_build_path = true
+)
+
+// Publish on release events
+if (package/ebbs_event == "release")
+{
+	publish(
+		name = package/name
+		version = package/version
+		project_root = project_root
+		build_root = project_root + "/build/publish"
+		visibility = "public"
+		clear_build_path = false
+	)
+}

@@ -12,7 +12,7 @@
 
 % \profilepic{sceon.jpg} % Profile picture
 \cvname{Sċéon Morrissette} % Your name
-\cvjobtitle{\normalsize{\centerline{Developer | Manager}}} % Job title/career
+\cvjobtitle{\normalsize{\centerline{Founder | Systems Architect}}} % Job title/career
 
 \cvaddress{Reno, NV} % Short address/location, use \newline if more than 1 line is required
 \cvnumberphone{+1 (775) 354-4343} % Phone number
@@ -27,27 +27,58 @@
 %	 ABOUT ME
 %----------------------------------------------------------------------------------------
 
-\aboutme{From business to biotech to de novo AI to cloud native software, my breadth of experience allows me to easily cross disciplines and bring people together. Building strong teams and resilient communities is something I continuously strive for. Whether I get to learn a new programming language, backdoor broken servers, design hardware, or build new organisms, I'm always excited to dig into interesting problems with good people and come back with novel solutions. I believe we have a responsibility to work together to leave this world better than we found it.}
+\aboutme{Sċéon: interdisciplinary\_engineer(\\
+\hspace*{2em}domain(\\
+\hspace*{4em}'biotechnology',\\
+\hspace*{4em}'AI systems',\\
+\hspace*{4em}'distributed systems',\\
+\hspace*{4em}'cloud infrastructure',\\
+\hspace*{4em}'business operations'\\
+\hspace*{2em}),\\
+\hspace*{2em}build(\\
+\hspace*{4em}'durable systems',\\
+\hspace*{4em}'scalable platforms',\\
+\hspace*{4em}'high-performing teams'\\
+\hspace*{2em})\\
+)\\
+I take responsibility for complex systems from initial design through deployment and long-term evolution.}
 
 %----------------------------------------------------------------------------------------
 %	 SKILLS
 %----------------------------------------------------------------------------------------
 
-% Skill bar section, each skill must have a value between 0 an 6 (float)
+% Skills grouped by category
 \skills{%
-	{\textbf{Hardware \& Electrical Engineering}/2},%
-	{\textbf{Embedded Systems}/2.3},%
-	{\textbf{Microsoft \& .NET}/3.0},%
-	{\textbf{Devops \& CI/CD}/3.8},%
-	{\textbf{Cloud Architecture (e.g. AWS)}/4.0},%
-	{\textbf{Git \& Version Control}/4.2},%
-    {\textbf{Web (PHP, JS, CSS, HTML)}/5.0},%
-	{\textbf{Python}/5.2},%
-	{\textbf{Linux \& Server Admin}/5.8},%
-	{\textbf{C++}/5.8},%
-	{\textbf{Experiment Design \& Debugging}/5.3},%
-	{\textbf{Security}/4},%
-	{\textbf{Leadership}/4.2}%
+	{\textbf{Platform Architecture}/
+		\textbullet\ Kubernetes (multi-node)\\\hspace*{1em}
+		\textbullet\ Secure multi-tenant infra\\\hspace*{1em}
+		\textbullet\ Networking\\\hspace*{1em}
+		\textbullet\ CI/CD
+	},%
+	{\textbf{Distributed Systems}/
+		\textbullet\ Runtime \& packaging design\\\hspace*{1em}
+		\textbullet\ Service orchestration\\\hspace*{1em}
+		\textbullet\ Production reliability
+	},%
+	{\textbf{Programming \& Tooling}/
+		\textbullet\ C++, Python, PHP, JavaScript\\\hspace*{1em}
+		\textbullet\ Custom language/runtime development
+	},%
+	{\textbf{Embedded Systems}/
+		\textbullet\ Low-level drivers (SPI, I2C, PWM)\\\hspace*{1em}
+		\textbullet\ Robotics integration
+	},%
+	{\textbf{Leadership}/
+		\textbullet\ Team building\\\hspace*{1em}
+		\textbullet\ Mentoring\\\hspace*{1em}
+		\textbullet\ Project management
+	},%
+	{\textbf{Systems Analysis \& Debugging}/
+		\textbullet\ Experiment design\\\hspace*{1em}
+		\textbullet\ Root-cause isolation\\\hspace*{1em}
+		\textbullet\ Performance profiling\\\hspace*{1em}
+		\textbullet\ Reliability validation
+	}%
 }
 
 %------------------------------------------------
@@ -75,24 +106,34 @@
 
 \section{Experience}
 
-\begin{twenty} % Environment for a list with descriptions
-	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
-	\twentyitem{2022-2023}{Senior Software Engineer}{\textbf{Zywave}}{%
-		For Zywave, I helped lead a team focused on delivering a great user experience for comparative insurance quoting. I mentored junior engineers, assisted in sprint planning, was the sole on-call engineer, and took point on new endeavors, like Snowflake integration. Otherwise, I focused on web development, solutions architecture, data management, and devops.%
+\begin{twenty}
+	\twentyitem{2024--now}{Software Engineer}{\textbf{Uplynx}}{%
+		\hangindent=1em\hangafter=0\textbullet\ Architected and delivered an offline-capable PWA for a field-operations platform supporting multi-state service workflows across distributed offices.\par
+		\hangindent=1em\hangafter=0\textbullet\ Owned fullstack implementation (data modeling, API design, sync strategy, and deployment), enabling reliable execution in low-connectivity environments.\par
+		\hangindent=1em\hangafter=0\textbullet\ Built a durable operational foundation currently serving active field staff in multiple locations, with expansion capacity designed into the system architecture.\par%
 	}
-	\twentyitem{2021-2022}{Solutions Architect}{\textbf{AOE Greens}}{%
-		For AOE Greens, I provided the custom software and cloud infrastructure for controlling hydroponics hardware through a secure web interface. Besides business strategy, the CEO and I collaborated on the design of hardware, circuits, software, and UI/UX for a fully custom IoT solution.%
+	\twentyitem{2022--2023}{Senior Software Engineer}{\textbf{Zywave}}{%
+		\hangindent=1em\hangafter=0\textbullet\ Helped lead development of a high-growth comparative quoting platform where quote volume was a primary business KPI, sustaining thousands of daily transactions and supporting multi-million-dollar premium workflows.\par
+		\hangindent=1em\hangafter=0\textbullet\ Sole on-call engineer responsible for production stability and incident response.\par
+		\hangindent=1em\hangafter=0\textbullet\ Led Snowflake integration initiatives and mentored junior engineers across sprint planning and architectural decisions.\par%
+	} 
+	\twentyitem{2020--now}{Founder \& CEO}{\textbf{eons LLC}}{%
+		\hangindent=1em\hangafter=0\textbullet\ Architect and operate a multi-tenant computing platform spanning a 9-node Kubernetes cluster and additional firewall/management servers supporting production client workloads.\par
+		\hangindent=1em\hangafter=0\textbullet\ Design and maintain the Elder programming language and associated tooling (EBBS build system, packaging model, container images, and self-hosted Git infrastructure).\par
+		\hangindent=1em\hangafter=0\textbullet\ Built and operated a revenue-generating platform with sustained growth (+153\% YoY gross charges over the last 12 months), while owning roadmap, budgets, and client delivery.\par%
 	}
-	\twentyitem{2020-now}{Founder \& CEO}{\textbf{eons LLC}}{%
-		For my own business, I architect, implement, maintain, and secure our cloud environment and frameworks for ops, AI, and data management. My work includes everything from hardware assembly through vpn \& firewall implementation to Kubernetes management and web development. I also handle our budgets and keep our clients happy.%
+	\twentyitem{2017--2021}{Research Associate}{\textbf{Zeakal}}{%
+		\hangindent=1em\hangafter=0\textbullet\ Contributed to the design and execution of a genetic engineering pipeline across lab, greenhouse, and study execution; managed personnel and resources.\par
+		\hangindent=1em\hangafter=0\textbullet\ Built and verified data-processing tooling (Excel/Python) to automate experimental digestion and speed time-to-results.\par
+		\hangindent=1em\hangafter=0\textbullet\ Hosted internal research data servers to support collaboration across a distributed team.\par%
 	}
-	\twentyitem{2017-2021}{Research Associate}{\textbf{Zeakal}}{%
-		I worked on a genetic engineering pipeline and managed other personnel, equipment, greenhouses, labs, and reagents. Using both Excel and Python, I wrote and mathematically verified software for automating the digestion of experimental data, enabling faster time-to-results across numerous studies. For collaboration with our global team, I built and hosted data servers for research results.%
-	}
-	\twentyitem{2015-2019}{Lead Software Engineer}{\textbf{Brain2Bot}}{%
-		Using C++, Qt, \& novel neuroscience I designed, developed, and deployed a cross-platform software solution for building brains. I built wired, and wrote drivers for PWM, SPI, \& I2C modules to create robot pets.%
+	\twentyitem{2015--2019}{Lead Software Engineer}{\textbf{Brain2Bot}}{%
+		\hangindent=1em\hangafter=0\textbullet\ Designed and deployed cross-platform C++/Qt software for modular robotics systems.\par
+		\hangindent=1em\hangafter=0\textbullet\ Developed low-level drivers and integrations for PWM, SPI, and I2C modules across custom hardware.\par
+		\hangindent=1em\hangafter=0\textbullet\ Owned system integration from hardware interfaces through user-facing software workflows.\par%
 	}
 \end{twenty}
+
 
 %----------------------------------------------------------------------------------------
 %	 EDUCATION
@@ -101,7 +142,7 @@
 \section{Education}
 
 \begin{twenty} % Environment for a list with descriptions
-	\twentyitem{2013-2017}{B.S. Biochemistry \& Molecular Biology}{University of Nevada, Reno}{Thesis: "Overexpression of DGAT1 and Modified Cysteine Soy Oleosin Increases Oil Content in the Green Tissue of \textit{Arabidopsis thaliana}", also earned a minor in mathematics.\\GPA: 3.402}
+	\twentyitem{2013-2017}{B.S. Biochemistry \& Molecular Biology}{University of Nevada, Reno}{Thesis: "Overexpression of DGAT1 and Modified Cysteine Soy Oleosin Increases Oil Content in the Green Tissue of \textit{Arabidopsis thaliana}", also earned a minor in mathematics.}
 	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
 \end{twenty}
 
@@ -110,12 +151,12 @@
 %	 AWARDS
 %----------------------------------------------------------------------------------------
 
-\section{Achievements}
+% \section{Achievements}
 
-\begin{twenty} % Environment for a short list with no descriptions
-	\twentyitem{2016}{Secretary \& Director}{Reno Video Game Symphony}{Designed \& implemented a constitution for the Reno Video Game Symphony and made the organization 501(c)(3) nonprofit.}
-	\twentyitem{2014}{Eagle Scout}{Boy Scouts of America}{Eagle scout project was painting a map of the United States at Virginia Palmer Elementary School.}
-\end{twenty}
+% \begin{twenty} % Environment for a short list with no descriptions
+% 	\twentyitem{2016}{Secretary \& Director}{Reno Video Game Symphony}{Designed \& implemented a constitution for the Reno Video Game Symphony and made the organization 501(c)(3) nonprofit.}
+% 	\twentyitem{2014}{Eagle Scout}{Boy Scouts of America}{Eagle scout project was painting a map of the United States at Virginia Palmer Elementary School.}
+% \end{twenty}
 
 %----------------------------------------------------------------------------------------
 %	 PROJECTS

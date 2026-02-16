@@ -53,7 +53,7 @@
 \definecolor{white}{RGB}{255,255,255}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{sidecolor}{HTML}{E7E7E7}
-\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{mainblue}{RGB}{10,6,32}
 \definecolor{maingray}{HTML}{B9B9B9}
 
 %----------------------------------------------------------------------------------------
@@ -103,16 +103,16 @@
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
-% Command for printing skill progress bars
+% Command for printing skills as a simple list (no bars)
 \newcommand\skills[1]{ 
 	\renewcommand{\skills}{
-		\begin{tikzpicture}
+		\begin{flushleft}
 			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.4) {\x};
+				\x\\
+				\hspace*{1em}\y\\
+				\vspace{0.25cm}
 			}
-		\end{tikzpicture}
+		\end{flushleft}
 	}
 }
 
@@ -183,12 +183,10 @@
 
 		%------------------------------------------------
 
-		\profilesection{Skills*}
+		\profilesection{Skills}
 
 		\skills
 		\skillstext
-		\scriptsize
-		*Confidence over perceived growth
 			
 		%------------------------------------------------
 			
@@ -257,7 +255,7 @@
 		\textbf{#2}%
 		\hfill%
 		{\footnotesize#3}\\%
-		#4\vspace{\parsep}%
+		\parindent=0pt#4\vspace{\parsep}%
 	}\\
 }
 
