@@ -1,8 +1,10 @@
 #!/usr/local/bin/elder
 // Build resume with EBBS using the latex builder.
 
-import("elder/build", "0.1.0")
-import("build/latex", "0.1.0")
+build_support := import("elder/build", "0.1.0")
+latex_pkg := import("build/latex", "0.1.0")
+shell := build_support/shell
+shell_quote := build_support/shell_quote
 
 package:
 (
@@ -13,11 +15,11 @@ package:
 	)
 )
 
-project_root := resolve_project_root_from_build_dir()
-build_root := project_root + "/build/tmp"
+project_root := build_support/resolve_project_root_from_build_dir(cwd = io/fs/cwd())/root
+build_root := path/norm(path/join(project_root, "build/tmp"))
 
 // Build the LaTeX document
-latex(
+latex_pkg/latex(
 	name = package/name
 	version = package/version
 	project_root = project_root
@@ -28,12 +30,8 @@ latex(
 // Publish on release events
 if (package/ebbs_event == "release")
 {
-	publish(
-		name = package/name
-		version = package/version
-		project_root = project_root
-		build_root = project_root + "/build/publish"
-		visibility = "public"
-		clear_build_path = false
-	)
+	publish_root := path/norm(path/join(project_root, "build/publish"))
+	published_pdf := path/norm(path/join(publish_root, "resume_seon-o'shannon.pdf"))
+	shell("mkdir -p " + shell_quote(publish_root))
+	shell("cp -f " + shell_quote(path/join(build_root, "main.pdf")) + " " + shell_quote(published_pdf))
 }
